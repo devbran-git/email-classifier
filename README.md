@@ -7,8 +7,11 @@ API desenvolvida para o desafio técnico, capaz de:
 3. **Gerar uma resposta profissional sugerida**, baseada na classificação, usando modelo LLM
 4. **Expor endpoints REST claros e bem estruturados**
 5. **Fornecer uma interface simples e responsiva para testes rápidos**
+   
 
 Deploy: **[https://emailclassifier-xisz.onrender.com/](https://emailclassifier-xisz.onrender.com/)**
+
+Apresentação do desafio **[https://youtu.be/E-9n4VQZHgY](https://youtu.be/E-9n4VQZHgY)**
 
 ---
 
