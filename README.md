@@ -223,10 +223,10 @@ Envia e recebe nos mesmos formatos, após a extração do texto.
 
 Este projeto entrega:
 
-✓ código limpo
-✓ modular
-✓ estruturado
-✓ pronto para produção
-✓ deploy funcional
-✓ documentação clara
-✓ aderência total ao desafio técnico
+- código limpo
+- modular
+- estruturado
+- pronto para produção
+- deploy funcional
+- documentação clara
+- aderência total ao desafio técnico
