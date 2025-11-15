@@ -1,7 +1,7 @@
 import httpx
 from fastapi import HTTPException
 from src.api.services.nlp_processor import preprocess
-from src.config import GROQ_API_KEY, GROQ_MODEL
+from src.config import GROQ_API_KEY, GROQ_MODEL, GROQ_CHAT_URL
 
 if not GROQ_API_KEY:
     raise RuntimeError("GROQ_API_KEY não configurada.")
@@ -24,8 +24,6 @@ async def classify_text(text: str) -> str:
     preprocessed_text = preprocess(text)
     prompt = PROMPT_TEMPLATE.format(email=preprocessed_text.strip())
 
-    url = "https://api.groq.com/openai/v1/chat/completions"
-
     headers = {
         "Authorization": f"Bearer {GROQ_API_KEY}",
         "Content-Type": "application/json",
@@ -46,7 +44,9 @@ async def classify_text(text: str) -> str:
 
     try:
         async with httpx.AsyncClient(timeout=40) as client:
-            response = await client.post(url, json=payload, headers=headers)
+            response = await client.post(
+                str(GROQ_CHAT_URL), json=payload, headers=headers
+            )
 
         if response.status_code == 429:
             raise HTTPException(
