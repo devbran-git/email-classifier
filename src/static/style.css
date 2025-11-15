@@ -1,0 +1,16 @@
+body {
+  background: #f8fafc;
+}
+
+textarea {
+  font-family: monospace;
+}
+
+#result pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.hidden {
+  display: none;
+}
